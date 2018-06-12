@@ -1,11 +1,7 @@
 import React from 'react';
-import {
-  Text,
-  View
-} from 'react-native';
+import FormLogin from './componentes/FormLogin';
 
 export default props => (
-  <View>
-    <Text>Olá Mundo!</Text>
-  </View>
-)
+    <FormLogin />
+);
+
