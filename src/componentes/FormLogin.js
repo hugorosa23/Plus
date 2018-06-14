@@ -22,8 +22,8 @@ const formLogin = props => {
             </View>
 
             <View style={{ flex:2 }}>
-                <TextInput value={props.email} style={{ fontSize:20, height: 45 }} placeholder='E-mail' placeholderTextColor='#fff' onChangeText={texto => props.modificaEmail(texto) } />
-                <TextInput secureTextEntry value={props.senha} style={{ fontSize:20, height: 45 }} placeholder='Senha' placeholderTextColor='#fff' onChangeText={texto => props.modificaSenha(texto) } />
+                <TextInput value={props.email} style={{ color: '#fff', fontSize:20, height: 45 }} placeholder='E-mail' placeholderTextColor='#fff' onChangeText={texto => props.modificaEmail(texto) } />
+                <TextInput secureTextEntry value={props.senha} style={{ color: '#fff', fontSize:20, height: 45 }} placeholder='Senha' placeholderTextColor='#fff' onChangeText={texto => props.modificaSenha(texto) } />
                 <TouchableHighlight onPress={() => Actions.formCadastro() }>
                     <Text style={{ color: '#fff', fontSize:16, paddingTop:10 }}>Ainda não possui cadastro? Cadastre-se</Text>
                 </TouchableHighlight>
