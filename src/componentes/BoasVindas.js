@@ -16,10 +16,13 @@ class boasVindas extends Component {
                 style={{ flex: 1, padding:15 }}>
                 <View style={{ flex: 2, justifyContent: 'center', alignItems: 'center' }}>
                     <Image style={{ width:130, height:130 }} source={require('./images/plus.png')} />
-                    <Text style={{ fontSize: 25, fontFamily: 'arial', color: '#fff' }}>Dê um PLUS na sua vida!</Text>
+                    <Text style={{ fontSize: 30, color: '#fff' }}>Seja bem vindo!</Text>
                 </View>
-                <View style={{ flex: 3 }}>
-                    
+                <View style={{ flex: 2, justifyContent: 'center', alignItems: 'center' }}>
+                    <Text style={{ fontSize: 20, color: '#fff' }}>Não será dificil perceber que</Text>
+                    <Text style={{ fontSize: 20, color: '#fff' }}>nós tornamos sua vida mais</Text>
+                    <Text style={{ fontSize: 20, color: '#fff' }}>fácil a cada dia.</Text>
+                    <Text style={{ fontSize: 25, color: '#fff' }}>Dê um PLUS na sua vida!</Text>
                 </View>
                 <View style={{ flex: 1 }}>
                     <Button title="Fazer Login" color='#292b2c' onPress={() => Actions.formLogin() }/>

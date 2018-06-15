@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import { View, TextInput, Button, Image, Text } from 'react-native';
+import { View, TextInput, Button, Image, Text, ActivityIndicator } from 'react-native';
 
 import { connect } from 'react-redux';
 import { modificaNome, modificaEmail, modificaSenha, cadastraUsuario } from '../actions/AutenticacaoActions';
@@ -17,6 +17,18 @@ class formCadastro extends Component {
 
         this.props.cadastraUsuario({ nome, email, senha });
     }
+    //função para o activityindicator que renderiza um component de loading.
+    renderBtnCadastro() {
+        if(this.props.loading_cadastro) {
+            return (
+                <ActivityIndicator size="large" />
+            )
+        }
+
+        return (
+            <Button title='Entrar' color='#292b2c' onPress={() => this._cadastraUsuario()} />
+        )
+    }
 //renderiza a tela.
     render() {
         return (
@@ -26,13 +38,13 @@ class formCadastro extends Component {
                 colors={['#3f95ea', '#5cddb4', '#52d3aa']}
                 style={{ flex: 1, padding:30 }}>
         
-                    <View style={{ flex:1, justifyContent: 'center', alignItems: 'center', paddingTop: 60 }}>
+                    <View style={{ flex:1, justifyContent: 'center', alignItems: 'center', paddingTop: 25 }}>
                         <Image style={{ width:130, height:130 }}
                         source={require('./images/plus.png')}
                         />
                     </View>
         
-                    <View style={{ flex:3, paddingTop: 80 }}>
+                    <View style={{ flex:4, paddingTop: 50 }}>
                         <TextInput 
                             value={this.props.nome} 
                             style={{ fontSize:20, color: '#fff', height: 45 }} 
@@ -54,7 +66,7 @@ class formCadastro extends Component {
                     </View>
         
                     <View style={{ flex:1 }}>
-                        <Button title='Cadastrar' color='#292b2c' onPress={() => this._cadastraUsuario()} />
+                        {this.renderBtnCadastro()}
                     </View>
             </LinearGradient>
         );
@@ -68,7 +80,8 @@ const mapStateToProps = state => (
         nome: state.AutenticacaoReducer.nome,
         email: state.AutenticacaoReducer.email,
         senha: state.AutenticacaoReducer.senha,
-        erroCadastro: state.AutenticacaoReducer.erroCadastro
+        erroCadastro: state.AutenticacaoReducer.erroCadastro,
+        loading_cadastro: state.AutenticacaoReducer.loading_cadastro
     }
 )
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TextInput, Button, TouchableHighlight } from 'react-native';
+import { View, Text, Image, TextInput, Button, TouchableHighlight, ActivityIndicator } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
@@ -16,6 +16,19 @@ class formLogin extends Component {
         const { email, senha } = this.props;
 
         this.props.autenticarUsuario({ email, senha });
+    }
+    //função para o activityindicator que renderiza um component de loading.
+    renderBtnAcessar() {
+
+        if(this.props.loading_login) {
+            return (
+                <ActivityIndicator size="large" />
+            )
+        }
+
+        return (
+            <Button title='Entrar' color='#292b2c' onPress={() => this._autenticarUsuario()} />
+        )
     }
 
     render() {
@@ -51,8 +64,8 @@ class formLogin extends Component {
                     </TouchableHighlight>
                 </View>
 
-                <View style={{ flex:2 }}>
-                    <Button title='Entrar' color='#292b2c' onPress={() => this._autenticarUsuario()} />
+                <View style={{ flex:1 }}>
+                    {this.renderBtnAcessar()}
                 </View>
             </LinearGradient>
         );
@@ -63,7 +76,8 @@ const mapStateToProps = state => (
     {
         email: state.AutenticacaoReducer.email,
         senha: state.AutenticacaoReducer.senha,
-        erroLogin: state.AutenticacaoReducer.erroLogin
+        erroLogin: state.AutenticacaoReducer.erroLogin,
+        loading_login: state.AutenticacaoReducer.loading_login
     }
 )
 
