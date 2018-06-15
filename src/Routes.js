@@ -5,6 +5,7 @@ import FormLogin from './componentes/FormLogin';
 import FormCadastro from './componentes/FormCadastro';
 import BoasVindas from './componentes/BoasVindas';
 import Home from './componentes/Home';
+import DrawerMenu from './componentes/DrawerMenu';
 
 export default props =>(
     <Router>
@@ -13,6 +14,7 @@ export default props =>(
             <Scene key='formCadastro' component={FormCadastro} title="Cadastro" />
             <Scene key='boasVindas' component={BoasVindas} title="Bem Vindo!" />
             <Scene key='home' component={Home} title="Home" />
+            <Scene key='drawerMenu' component={DrawerMenu} title="Menu" />
         </Scene>
     </Router>
 )

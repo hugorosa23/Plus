@@ -1,7 +1,7 @@
 import { MODIFICA_EMAIL, MODIFICA_SENHA, MODIFICA_NOME, CADASTRO_USUARIO_SUCESSO,
     CADASTRO_USUARIO_ERRO, LOGIN_USUARIO_ERRO, LOGIN_EM_ANDAMENTO, CADASTRO_EM_ANDAMENTO  } from '../actions/types';
 
-
+//O redux gerencia as variáveis de estado da aplicação.
 const INICIAL_STATE = {
     nome: '',
     email: '',

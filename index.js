@@ -9,4 +9,6 @@ const Plus = props => (
 
 AppRegistry.registerComponent('Plus', () => App);
 
-YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader', 'Remote debugger is in a background tab', 'Setting a timer for a long period of time']);
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader', 'Remote debugger is in a background tab', 
+'Setting a timer for a long period of time', 
+'Warning: Failed prop type']);
