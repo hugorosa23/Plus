@@ -6,6 +6,10 @@ import { connect } from 'react-redux';
 import { modificaNome, modificaEmail, modificaSenha, cadastraUsuario } from '../actions/AutenticacaoActions';
 
 class formCadastro extends Component {
+    //remove o header do componente
+    static navigationOptions = {
+        header: null
+      };
 //função interna do objeto
     _cadastraUsuario() {
 
