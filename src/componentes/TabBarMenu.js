@@ -14,7 +14,7 @@ export default props => (
             </View>
 
             <View style={{ height: 50, justifyContent: 'center', marginRight: 20 }}>
-                <TouchableHighlight onPress={() => Actions.drawerMenu()}>
+                <TouchableHighlight onPress={() => Actions.drawerMenu()} underlayColor="transparent">
                     <Image style={{ width:40, height:40 }} source={require('./images/menu.png')} />
                 </TouchableHighlight>
             </View>

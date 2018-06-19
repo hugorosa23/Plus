@@ -6,7 +6,7 @@ import TabBarMenu from './TabBarMenu';
 //componentes das tabs
 import Agenda from './Agenda';
 import Calendario from './Calendario';
-import Plus from './Plus'
+import Plus from './plusChat/Plus'
 
 export default class Home extends Component {
     //remove o header do componente

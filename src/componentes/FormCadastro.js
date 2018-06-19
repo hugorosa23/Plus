@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import { View, TextInput, Button, Image, Text, ActivityIndicator } from 'react-native';
+import { View, TextInput, Button, Image, Text, ActivityIndicator, StatusBar } from 'react-native';
 
 import { connect } from 'react-redux';
 import { modificaNome, modificaEmail, modificaSenha, cadastraUsuario } from '../actions/AutenticacaoActions';
@@ -37,6 +37,7 @@ class formCadastro extends Component {
                 locations={[0.1,1.0,0.60]}
                 colors={['#3f95ea', '#5cddb4', '#52d3aa']}
                 style={{ flex: 1, padding:30 }}>
+                <StatusBar backgroundColor="#212324" />
         
                     <View style={{ flex:1, justifyContent: 'center', alignItems: 'center', paddingTop: 25 }}>
                         <Image style={{ width:130, height:130 }}

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import {CalendarList} from 'react-native-calendars';
+import {LocaleConfig} from 'react-native-calendars';
 
 export default class CalendarsList extends Component {
   constructor(props) {
@@ -20,4 +21,13 @@ export default class CalendarsList extends Component {
       />
     );
   }
+  /*
+  LocaleConfig.locales['br'] = {
+    monthNames: ['Janeiro','Fevereiro','Matço','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+    monthNamesShort: ['Jan.','Fev.','Mar.','Abr.','Mai.','Jun.','Jul.','Ago.','Set.','Out.','Nov.','Dez.'],
+    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+    dayNamesShort: ['Dom.','Seg.','Ter.','Qua.','Qui.','Sex.','Sáb.']
+  };
+  
+  LocaleConfig.defaultLocale = 'br';*/
 }

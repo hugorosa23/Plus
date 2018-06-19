@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity
 } from 'react-native';
+import ActionButton from 'react-native-action-button';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {Agenda} from 'react-native-calendars';
 
 export default class Calendario extends Component {
@@ -16,14 +19,17 @@ export default class Calendario extends Component {
 
   render() {
     return (
-      <Agenda
-        items={this.state.items}
-        loadItemsForMonth={this.loadItems.bind(this)}
-        selected={'2018-06-15'}
-        renderItem={this.renderItem.bind(this)}
-        renderEmptyDate={this.renderEmptyDate.bind(this)}
-        rowHasChanged={this.rowHasChanged.bind(this)}
-      />
+      <View style={{flex:1}}>
+        <Agenda
+          items={this.state.items}
+          loadItemsForMonth={this.loadItems.bind(this)}
+          selected={'2018-06-19'}
+          renderItem={this.renderItem.bind(this)}
+          renderEmptyDate={this.renderEmptyDate.bind(this)}
+          rowHasChanged={this.rowHasChanged.bind(this)}
+          renderFabButton={this.renderFabButton.bind(this)}
+        />
+      </View>
     );
   }
 
@@ -61,12 +67,22 @@ export default class Calendario extends Component {
 
   renderEmptyDate() {
     return (
-      <View style={styles.emptyDate}><Text>This is empty date!</Text></View>
+      <View style={styles.item}><Text>This is empty date!</Text></View>
     );
   }
 
   rowHasChanged(r1, r2) {
     return r1.name !== r2.name;
+  }
+
+  renderFabButton() {
+    return (
+      <View style={styles.container}>
+        <TouchableOpacity style={ styles.btn }>
+          <Text>+</Text>
+        </TouchableOpacity>
+      </View>
+    );
   }
 
   timeToString(time) {
@@ -88,5 +104,19 @@ const styles = StyleSheet.create({
     height: 15,
     flex:1,
     paddingTop: 30
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  btn: {
+    position: 'absolute',
+    width: 50, height: 50,
+    backgroundColor:'green',
+    borderRadius: 50,
+    bottom:10, right: 10,
+    alignItems:'center',
+    justifyContent: 'center'
   }
 });

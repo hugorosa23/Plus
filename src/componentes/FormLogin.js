@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TextInput, Button, TouchableHighlight, ActivityIndicator } from 'react-native';
+import { View, Text, Image, TextInput, Button, TouchableHighlight, ActivityIndicator, StatusBar } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
@@ -38,6 +38,7 @@ class formLogin extends Component {
             locations={[0.1,1.0,0.60]}
             colors={['#3f95ea', '#5cddb4', '#52d3aa']}
             style={{ flex: 1, padding:30 }}>
+            <StatusBar backgroundColor="#212324" />
 
                 <View style={{ flex:2, justifyContent: 'center', alignItems: 'center' }}>
                     <Image style={{ width:130, height:130 }}
@@ -59,7 +60,7 @@ class formLogin extends Component {
                         onChangeText={texto => this.props.modificaSenha(texto) } />
                     <Text style={{ color: '#ff0000', fontSize: 18 }}>{this.props.erroLogin}</Text>
 
-                    <TouchableHighlight onPress={() => Actions.formCadastro() }>
+                    <TouchableHighlight onPress={() => Actions.formCadastro() } underlayColor="transparent">
                         <Text style={{ color: '#fff', fontSize:16, paddingTop:10 }}>Ainda não possui cadastro? Cadastre-se</Text>
                     </TouchableHighlight>
                 </View>
