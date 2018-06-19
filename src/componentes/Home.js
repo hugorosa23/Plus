@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
+import { View, StatusBar, StyleSheet, Dimensions } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
 
 import TabBarMenu from './TabBarMenu';
 //componentes das tabs
 import Agenda from './Agenda';
 import Calendario from './Calendario';
-import Plus from './plusChat/Plus'
+import Plus from './Plus'
 
 export default class Home extends Component {
     //remove o header do componente
@@ -26,7 +26,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <TabView
+        <TabView
         navigationState={this.state}
         renderScene={SceneMap({
           first: Agenda,

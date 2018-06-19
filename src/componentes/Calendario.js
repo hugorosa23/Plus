@@ -2,6 +2,15 @@ import React, {Component} from 'react';
 
 import {CalendarList} from 'react-native-calendars';
 import {LocaleConfig} from 'react-native-calendars';
+//Configura os nomes das datas no calendário.
+LocaleConfig.locales['br'] = {
+  monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+  monthNamesShort: ['Jan.','Fev.','Mar.','Abr.','Mai.','Jun.','Jul.','Ago.','Set.','Out.','Nov.','Dez.'],
+  dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+  dayNamesShort: ['Dom.','Seg.','Ter.','Qua.','Qui.','Sex.','Sáb.']
+};
+
+LocaleConfig.defaultLocale = 'br';
 
 export default class CalendarsList extends Component {
   constructor(props) {
@@ -10,7 +19,7 @@ export default class CalendarsList extends Component {
 
   render() {
     return (
-      <CalendarList current={'2018-06-15'} pastScrollRange={24} futureScrollRange={24} 
+      <CalendarList current={'2018-06-19'} pastScrollRange={24} futureScrollRange={24} 
       markedDates={
         {
          '2018-06-14': {startingDay: true, color: '#52d3aa'},
@@ -21,13 +30,4 @@ export default class CalendarsList extends Component {
       />
     );
   }
-  /*
-  LocaleConfig.locales['br'] = {
-    monthNames: ['Janeiro','Fevereiro','Matço','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
-    monthNamesShort: ['Jan.','Fev.','Mar.','Abr.','Mai.','Jun.','Jul.','Ago.','Set.','Out.','Nov.','Dez.'],
-    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
-    dayNamesShort: ['Dom.','Seg.','Ter.','Qua.','Qui.','Sex.','Sáb.']
-  };
-  
-  LocaleConfig.defaultLocale = 'br';*/
 }
